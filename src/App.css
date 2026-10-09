@@ -1,0 +1,20 @@
+.smoke {
+  max-width: 40rem;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+.smoke h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.tag {
+  margin: 0 0 1.5rem;
+  color: #94a3b8;
+}
+
+.checks {
+  margin: 0;
+  padding-left: 1.25rem;
+}

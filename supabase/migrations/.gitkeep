@@ -1,0 +1,2 @@
+# This directory holds Supabase SQL migrations.
+# It is intentionally empty in M1. Migrations are added from M2 onward.

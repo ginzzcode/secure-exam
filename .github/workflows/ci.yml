@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Install, lint, build, scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies from the lockfile
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Production build
+        run: npm run build
+
+      - name: Scan the bundle for privileged secrets
+        run: npm run scan:bundle
+
+  test:
+    name: Placeholder test job
+    runs-on: ubuntu-latest
+    # This job is a placeholder. No product tests exist in M1.
+    # It is wired so the pipeline shape is real; it asserts nothing.
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install dependencies from the lockfile
+        run: npm ci
+
+      - name: Placeholder test (no product tests exist yet)
+        run: npm test

@@ -1,0 +1,19 @@
+# Supabase CLI configuration for local development.
+#
+# This file configures the local development stack only. Hosted staging and
+# production projects are separate and are linked manually; they are not created
+# or modified by this repository.
+#
+# Do not commit access tokens, project references tied to secrets, or service
+# keys. Link a hosted project with the CLI using credentials you supply locally.
+#
+# Common commands:
+#   npx supabase start                       # start the local stack
+#   npx supabase migration list --linked     # compare local and remote migrations
+#   npx supabase migration new <name>        # create a migration file
+#   npx supabase db push --linked --dry-run  # preview a migration push
+#
+# No product schema migrations exist in M1. The migrations directory is empty by
+# design and is created for future milestones.
+
+project_id = "secure-exam"
